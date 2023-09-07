@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   signal.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jenny <jenny@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rimarque <rimarque>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:11:59 by joe               #+#    #+#             */
-/*   Updated: 2023/09/06 17:29:15 by jenny            ###   ########.fr       */
+/*   Updated: 2023/09/07 18:38:40 by rimarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ extern int	g_ex_status;
  *
  * @param sig O número do sinal recebido, geralmente SIGINT.
  */
-void signal_handler(int sig) 
+void signal_handler(int sig)
 {
-    if (sig == SIGINT) 
+    if (sig == SIGINT)
     {
         g_ex_status = 130;       // Define o status de saída para 130
         ft_printf("\n");         // Escreve uma nova linha
@@ -47,15 +47,15 @@ void signal_handler(int sig)
  *
  * @param sig O número do sinal recebido, geralmente SIGINT.
  */
-void signal_quit1(int sig) 
+void signal_quit1(int sig)
 {
-    if (sig == SIGINT) 
+    if (sig == SIGINT)
     {
         ft_printf("\n");                  // Escreve uma nova linha no terminal
         g_ex_status = 130;                // Define o status de saída como 130
         rl_replace_line("", 0);           // Substitui a linha atual por uma string vazia
         rl_on_new_line();                 // Move o cursor para uma nova linha
-        signal(SIGQUIT, SIG_DFL);         // Restaura o comportamento padrão do sinal SIGQUIT
+        signal(SIGQUIT, SIG_DFL);        // Restaura o comportamento padrão do sinal SIGQUIT
     }
 }
 
@@ -71,9 +71,9 @@ void signal_quit1(int sig)
  *
  * @param sig O número do sinal recebido, geralmente SIGQUIT.
  */
-void signal_quit(int sig) 
+void signal_quit(int sig)
 {
-    if (sig == SIGQUIT) 
+    if (sig == SIGQUIT)
     {
         write(1, "\n", 1);                 // Escreve uma nova linha no terminal
         g_ex_status = 131;                // Define o status de saída como 131
@@ -108,7 +108,7 @@ void signal_quit2(int sig) {
  * SIGINT e SIGQUIT. Ela utiliza a função signal_handler para SIGINT e
  * ignora SIGQUIT.
  */
-void signals(void) 
+void signals(void)
 {
     signal(SIGINT, signal_handler);     // Associa signal_handler ao sinal SIGINT
     signal(SIGQUIT, SIG_IGN);           // Ignora o sinal SIGQUIT
