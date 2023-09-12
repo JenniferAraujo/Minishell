@@ -44,7 +44,11 @@ int	open_hd(char *lim, bool quotes, t_main *main)
 	printf("entra aqui 2\n");
 	if (pipe(heredoc_fd) == -1)
 	{
+<<<<<<< HEAD
 			//!error_management(NULL, 0, errno); //*errno -> number of last error
+=======
+		//!error_management(NULL, 0, errno); //*errno -> number of last error
+>>>>>>> origin/main
 	}
 	buff = read_stdin(lim, quotes);
 	printf("buff: %s\n", buff);

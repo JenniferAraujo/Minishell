@@ -34,6 +34,12 @@ void	error_cd(int fd)
 	ft_putendl_fd("cd: OLDPWD not set", fd);
 }
 
+void	error_export(int fd)
+{
+	ft_putstr_fd("minishell: ", fd);
+	ft_putendl_fd("zsh: bad assignment", fd);
+}
+
 void	error_quotes(int fd)
 {
 	ft_putstr_fd("minishell: ", fd);

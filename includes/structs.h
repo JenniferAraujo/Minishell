@@ -172,6 +172,7 @@ typedef struct s_main
 	int				fork;
 	int				proc;
 	t_lexer			tokens;
+	t_env			export_list;
 	t_env			env_list;
 	t_quotes		quotes;
 	t_ast 			ast;
