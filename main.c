@@ -87,8 +87,6 @@ void	init_prompt(t_main	*main)
 		printf("exit_code: %d\n", g_ex_status);
 		if(g_ex_status != 0)
 			set_exit_code(main, g_ex_status);
-		if(g_ex_status == -1)
-			set_exit_code(main, 0);
 		if (main->quotes.error)
 			break ;
 		lexer(main);

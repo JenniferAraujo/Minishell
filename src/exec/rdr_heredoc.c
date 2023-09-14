@@ -12,7 +12,14 @@
 
 #include "../../includes/minishell.h"
 
-char	*read_stdin(char *lim, bool quotes)
+int	get_max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+char	*read_stdin(char *lim, bool quotes, t_main main)
 {
 	char	*str;
 	char	*buff;
@@ -21,17 +28,19 @@ char	*read_stdin(char *lim, bool quotes)
 	buff = "\0";
 	while (1)
 	{
-		ft_printf("entra aqui 3\n");
-		ft_printf("> ");
+		write(main.fd.stdout, "> ", 2);
 		str = get_next_line(STDIN_FILENO, false);
-		//!str = expand_line(str, quotes);
-		if (!strncmp(lim, str, strlen(lim)))
+		if(!quotes)
+		{
+			//!str = expand_line(str, quotes);
+		}
+		if (!ft_strncmp(lim, str, get_max(ft_strlen(lim), ft_strclen(str, '\n'))))
 		{
 			ft_free_str(&str);
 			break ;
 		}
 		buff = ft_strjoinfree(buff, str);
-		//ft_free_str(&str);
+		ft_free_str(&str);
 	}
 	return (buff);
 }
@@ -41,17 +50,15 @@ int	open_hd(char *lim, bool quotes, t_main *main)
 	int		heredoc_fd[2];
 	char	*buff;
 
-	printf("entra aqui 2\n");
 	if (pipe(heredoc_fd) == -1)
 	{
 			//!error_management(NULL, 0, errno); //*errno -> number of last error
 	}
-	buff = read_stdin(lim, quotes);
-	printf("buff: %s\n", buff);
+	buff = read_stdin(lim, quotes, *main);
 	write(heredoc_fd[1], buff, strlen(buff));
 	close(heredoc_fd[1]);
 	if (*buff)
-		//ft_free_str(&buff);
+		ft_free_str(&buff);
 	return (heredoc_fd[0]);
 }
 
@@ -59,7 +66,6 @@ void	rdr_hd(t_token token, t_main *main)
 {
 	int	fd;
 
-	printf("entra aqui\n");
 	if(token.arr[1] == NULL)
 	{
 		fd = open_hd(token.arr[0], token.quotes, main);

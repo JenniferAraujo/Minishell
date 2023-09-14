@@ -6,14 +6,36 @@
 /*   By: rimarque <rimarque>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 18:19:10 by rimarque          #+#    #+#             */
-/*   Updated: 2023/09/06 19:12:47 by rimarque         ###   ########.fr       */
+/*   Updated: 2023/09/14 20:37:02 by rimarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
+void	wait_estatus_p(t_main *main)
+{
+	//int counter;
+	int exit_status;
+	//int pid;
+
+	//counter = 0;
+	while(waitpid(0, &exit_status, 0) > 0)
+	{
+		//pid = waitpid(0, &exit_status, 0);
+		//printf("closed %d\n", pid);
+		continue ; //!WNOHANG perceber para que serve esta flag e quando
+	}
+	if (WEXITSTATUS(exit_status) != 0)
+		set_exit_code(main, WEXITSTATUS(exit_status));
+	else
+		set_exit_code(main, 0);
+	//while(wait(0) > 0)
+	//	continue;
+}
+
 void	pipe_read_and_write(int *fd, int *next_fd, char **cmd, t_main *main)
 {
+	close(fd[1]);
 	close(next_fd[0]);
 	dup2(fd[0], STDIN_FILENO);
 	close(fd[0]);
@@ -23,6 +45,7 @@ void	pipe_read_and_write(int *fd, int *next_fd, char **cmd, t_main *main)
 }
 void	read_from_pipe(int *fd, char **cmd, t_main *main)
 {
+	close(fd[1]);
 	dup2(fd[0], STDIN_FILENO); //*redireciona o stdin para o pipe
 	close(fd[0]);
 	exec_cmd(cmd, main, true);
@@ -43,29 +66,35 @@ void	mltp_pipes(int	*fd, t_ast ast, t_ast_node *node, t_main *main)
 {
 	int	next_fd[2];
 	int pid;
-	int exit_status;
 
+	//close(fd[0]);
+	//close(fd[1]);
 	while (node->index < ast.size - 1) //*quando o index é igual ao size - 1, estamos no ultimo pipe a ser executado
 	{
-		close(fd[1]);
 		if (pipe(next_fd) == -1)
 		{
 			//!error_management(NULL, 0, errno);
 		}
 		pid = fork();
 		//!if (pid == -1)
-			//!	error_management(NULL, 0, errno);
+		//!	error_management(NULL, 0, errno);
 		if (pid == 0)
 			pipe_read_and_write(fd, next_fd, node->right->token.arr, main);
-		waitpid(pid, &exit_status, WNOHANG); //!WNOHANG perceber para que serve esta flag e quando
+		/*waitpid(pid, &exit_status, 0); //!WNOHANG perceber para que serve esta flag e quando
 		if (WEXITSTATUS(exit_status) != 0)
 			set_exit_code(main, WEXITSTATUS(exit_status));
 		else
-			set_exit_code(main, 0);
+			set_exit_code(main, 0);*/
+		close(fd[0]);
+		close(fd[1]);
+		if (pipe(fd) == -1)
+		{
+			//!error_management(NULL, 0, errno);
+		}
 		dup2(next_fd[0], fd[0]);
 		dup2(next_fd[1], fd[1]);
-		close(next_fd[1]);
 		close(next_fd[0]);
+		close(next_fd[1]);
 		node = node->prev;
 	}
 	pid = fork();
@@ -75,14 +104,16 @@ void	mltp_pipes(int	*fd, t_ast ast, t_ast_node *node, t_main *main)
 	{
 		read_from_pipe(fd, node->right->token.arr, main);
 	}
-	waitpid(pid, NULL, 0);
+	close(fd[0]);
+	close(fd[1]);
+	wait_estatus_p(main);
+	//waitpid(pid, NULL, 0);
 }
 
 void	pipex(t_ast ast, t_ast_node *node, t_main *main)
 {
 	int	fd[2];
 	int	pid;
-	int	exit_status;
 	//int	next_fd[2];
 
 	//printf("pipex\n");
@@ -96,16 +127,18 @@ void	pipex(t_ast ast, t_ast_node *node, t_main *main)
 		//!	error_management(NULL, 0, errno);
 	if (pid == 0)
 		write_to_pipe(fd, node->left->token.arr, main);
-	waitpid(pid, &exit_status, WNOHANG);
-	if (WEXITSTATUS(exit_status) != 0)
-		set_exit_code(main, WEXITSTATUS(exit_status));
-	else
-		set_exit_code(main, 0);
+	//waitpid(pid, &exit_status, 0);
+	//if (WEXITSTATUS(exit_status) != 0)
+	//	set_exit_code(main, WEXITSTATUS(exit_status));
+	//else
+	//	set_exit_code(main, 0);
 	if(ast.size > 1)
+	{
+		printf("ENTRA NOS MLTPL PIPES\n");
 		mltp_pipes(fd, ast, node, main);
+	}
 	else
 	{
-		close(fd[1]);
 		pid = fork();
 		//!if (pid == -1)
 			//!	error_management(NULL, 0, errno);
@@ -113,13 +146,18 @@ void	pipex(t_ast ast, t_ast_node *node, t_main *main)
 		{
 			read_from_pipe(fd, node->right->token.arr, main);
 		}
-		waitpid(pid, &exit_status, 0);
+		close(fd[0]);
+		close(fd[1]);
+		//waitpid(pid1, NULL, 0);
+		//waitpid(pid2, NULL, 0);
+		wait_estatus_p(main);
+		/*waitpid(pid, &exit_status, 0);
 		if (WEXITSTATUS(exit_status) != 0)
 			set_exit_code(main, WEXITSTATUS(exit_status));
 		else
-			set_exit_code(main, 0);
+			set_exit_code(main, 0);*/
 	}
-	close(fd[0]);
+	//close(fd[0]);
 }
 t_ast_node	*get_beg(t_ast ast)
 {
