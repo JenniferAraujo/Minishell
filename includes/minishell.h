@@ -78,7 +78,7 @@ bool    modify_var(t_main *main, char *str, bool exp);
 void	copy_exp(t_main *main);
 void    remove_var(t_env *env, int index);
 void    cd(char *path, t_main *main, bool child);
-void	ft_exit(char **command);
+void	ft_exit(char **command, bool child);
 
 /*
 !LEXER.C
@@ -123,6 +123,8 @@ LEXER_UTILS
 void    remove_node(t_lexer *lexer, int index);
 void    insert_node(t_lexer *lexer, t_node *new, int index);
 void    print_tokens(t_lexer *tokens);
+t_node	*find_node(t_lexer tokens, int index);
+int		find_last_hd(t_lexer tokens);
 
 /*
 PARCER
@@ -145,7 +147,8 @@ void	init_rdr(t_lexer tokens, t_main *main);
 void	rdr_in(char **arr, t_main *main);
 void	rdr_out(char **arr, t_main *main);
 void	rdr_app(char **arr, t_main *main);
-void	rdr_hd(t_token token, t_main *main);
+void	rdr_hd(t_token token, t_main *main, int fd);
+int		open_hd(char *lim, bool quotes, t_main *main);
 
 /*
 EXECVE
@@ -179,7 +182,7 @@ void	signal_quit(int sig);
 void	signal_quit1(int sig);
 void	signal_quit2(int sig);
 void	signal_handler(int sig);
-void	signals(void);
+void	signals(bool child, bool hd, bool normal);
 void	ft_wait(t_main *main);
 
 /*
@@ -189,6 +192,9 @@ void	error_msg_cmd(char *str, int fd);
 void	error_msg_file(char *str, int fd);
 void	error_cd(int fd);
 void	error_export(int fd);
+void	error_quotes(int fd);
+
+//!PROMPT
 void	prompt_diogo(t_prompt *prompt_list);
 void	prompt_rita(t_prompt *prompt_list);
 void    prompt_jenny(t_prompt *prompt_list);

@@ -76,17 +76,18 @@ void	init_prompt(t_main	*main)
 
 	while (1)
 	{
-		signals();
+		signals(false, false, false);
 		prompt = get_prompt_msg(main);
 		input = readline(prompt);
 		if (input == NULL)
 			break;
 		add_history(input);
 		init_input(main, input);
-		ft_wait(main);
-		printf("exit_code: %d\n", g_ex_status);
 		if(g_ex_status != 0)
+		{
 			set_exit_code(main, g_ex_status);
+			g_ex_status = 0;
+		}
 		if (main->quotes.error)
 			break ;
 		lexer(main);

@@ -37,6 +37,7 @@ typedef struct s_bool
 	bool            put_node_behind;
 	bool            rdr_treated;
 	bool            rdr_err;
+	bool			signal;
 } t_bool;
 
 //* Cada node vai conter uma string com a variavel de ambiente
@@ -89,6 +90,7 @@ typedef struct s_node
 	int				index;
 	int				quotes;
 	struct s_node	*next;
+	int				fd;
 }t_node;
 
 //* Esta e a struct inicial do t_lexer, ela aponta para o node head (1 node)
@@ -112,7 +114,8 @@ typedef struct s_ast_node
 	t_token				token;
 	struct s_ast_node	*right;
 	struct s_ast_node	*prev;
-	int					index; //!o index esta ao contrario da arvore, a favor da ordem de execução
+	int					pid;
+	int					index; //*index dos nodes/pipes: o index esta ao contrario da arvore, a favor da ordem de execução
 }
 t_ast_node;
 
@@ -121,7 +124,7 @@ typedef	struct s_ast
 {
 	t_ast_node			*head;
 	int					counter;
-	int					size; //number of nodes/operators
+	int					size; //number of pipes/nodes
 }
 t_ast;
 
@@ -180,6 +183,7 @@ typedef struct s_main
 	t_prompt		prompt_list;
 	t_bool          flags;
 	pid_t			pid;
+	bool			hd;
 }t_main;
 
 #endif

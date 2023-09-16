@@ -6,27 +6,50 @@
 /*   By: rimarque <rimarque>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 18:19:10 by rimarque          #+#    #+#             */
-/*   Updated: 2023/09/14 20:37:02 by rimarque         ###   ########.fr       */
+/*   Updated: 2023/09/15 15:02:44 by rimarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
-void	wait_estatus_p(t_main *main)
+void	wait_estatus_p(t_main *main, t_ast ast)
 {
-	//int counter;
 	int exit_status;
-	//int pid;
+	int result;
+	t_ast_node *node;
+	bool first_time;
+	int counter = 0;
 
-	//counter = 0;
-	while(waitpid(0, &exit_status, 0) > 0)
+	first_time = true;
+	node = ast.head;
+	result = 1;
+	while(counter++ < ast.size)
 	{
+		if(first_time)
+		{
+			printf("entra aqui\n");
+			result = waitpid(node->left->pid, &exit_status, 0);
+			first_time = false;
+		}
+		else
+		{
+			result = waitpid(node->right->pid, &exit_status, 0);
+			node = node->prev;
+		}
 		//pid = waitpid(0, &exit_status, 0);
 		//printf("closed %d\n", pid);
-		continue ; //!WNOHANG perceber para que serve esta flag e quando
+		printf("exit status %d\n", exit_status);
+		printf("W exit status %d\n", WEXITSTATUS(exit_status));
+		//continue ;
 	}
+	printf("last exit status %d\n", exit_status);
+	printf("W exit status %d\n", WEXITSTATUS(exit_status));
 	if (WEXITSTATUS(exit_status) != 0)
+	{
+		//printf("ENTRA\n");
+		//printf("W exit status %d\n", WEXITSTATUS(exit_status));
 		set_exit_code(main, WEXITSTATUS(exit_status));
+	}
 	else
 		set_exit_code(main, 0);
 	//while(wait(0) > 0)
@@ -79,7 +102,10 @@ void	mltp_pipes(int	*fd, t_ast ast, t_ast_node *node, t_main *main)
 		//!if (pid == -1)
 		//!	error_management(NULL, 0, errno);
 		if (pid == 0)
+		{
+			node->right->pid = pid;
 			pipe_read_and_write(fd, next_fd, node->right->token.arr, main);
+		}
 		/*waitpid(pid, &exit_status, 0); //!WNOHANG perceber para que serve esta flag e quando
 		if (WEXITSTATUS(exit_status) != 0)
 			set_exit_code(main, WEXITSTATUS(exit_status));
@@ -102,11 +128,12 @@ void	mltp_pipes(int	*fd, t_ast ast, t_ast_node *node, t_main *main)
 		//!	error_management(NULL, 0, errno);
 	if (pid == 0)
 	{
+		node->right->pid = pid;
 		read_from_pipe(fd, node->right->token.arr, main);
 	}
 	close(fd[0]);
 	close(fd[1]);
-	wait_estatus_p(main);
+	wait_estatus_p(main, ast);
 	//waitpid(pid, NULL, 0);
 }
 
@@ -126,7 +153,10 @@ void	pipex(t_ast ast, t_ast_node *node, t_main *main)
 	//!if (pid == -1)
 		//!	error_management(NULL, 0, errno);
 	if (pid == 0)
+	{
+		node->left->pid = pid;
 		write_to_pipe(fd, node->left->token.arr, main);
+	}
 	//waitpid(pid, &exit_status, 0);
 	//if (WEXITSTATUS(exit_status) != 0)
 	//	set_exit_code(main, WEXITSTATUS(exit_status));
@@ -144,13 +174,15 @@ void	pipex(t_ast ast, t_ast_node *node, t_main *main)
 			//!	error_management(NULL, 0, errno);
 		if (pid == 0)
 		{
+			node->right->pid = pid;
 			read_from_pipe(fd, node->right->token.arr, main);
 		}
 		close(fd[0]);
 		close(fd[1]);
 		//waitpid(pid1, NULL, 0);
 		//waitpid(pid2, NULL, 0);
-		wait_estatus_p(main);
+		printf("oi?");
+		wait_estatus_p(main, ast);
 		/*waitpid(pid, &exit_status, 0);
 		if (WEXITSTATUS(exit_status) != 0)
 			set_exit_code(main, WEXITSTATUS(exit_status));

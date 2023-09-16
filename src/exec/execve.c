@@ -97,20 +97,24 @@ void	exec_other_cmd(char **cmd, t_main *main, bool child)
 	set_env_arr(main);
 	if(child)
 	{
+		printf("oi\n");
 		//signal handle ctrc --> \n
 		execution(cmd, main);
 	}
 	else
 	{
+		signals(true, false, false);
 		pid = fork();
 		if(pid == 0)
 		{
-			//signal handle ctrc --> \n
 			execution(cmd, main);
 		}
+		//!if pid = -1
 		waitpid(pid, &exit_status, 0);
 		if (WEXITSTATUS(exit_status) != 0)
+		{
 			set_exit_code(main, WEXITSTATUS(exit_status));
+		}
 		else
 			set_exit_code(main, 0);
 	}
