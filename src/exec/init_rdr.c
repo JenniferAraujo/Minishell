@@ -54,7 +54,6 @@ void	init_rdr(t_lexer tokens, t_main *main)
 	int index;
 	int hd_fd;
 
-	printf("entra aqui!!\n");
 	aux = tokens.head;
 	counter = 0;
 	while(counter++ < tokens.size)
@@ -69,8 +68,10 @@ void	init_rdr(t_lexer tokens, t_main *main)
 		}
 		aux = aux->next;
 	}
-	signals(true, false, false);
+	signals(1);
 	pid = fork();
+	aux = tokens.head;
+	counter = 0;
 	if (pid == 0)
 	{
 		index = find_last_hd(tokens);

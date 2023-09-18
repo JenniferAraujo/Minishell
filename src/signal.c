@@ -6,7 +6,7 @@
 /*   By: rimarque <rimarque>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:11:59 by joe               #+#    #+#             */
-/*   Updated: 2023/09/16 17:26:50 by rimarque         ###   ########.fr       */
+/*   Updated: 2023/09/18 12:50:45 by rimarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void signal_handler(int sig)
 {
     if (sig == SIGINT)
     {
-        printf("entra no signal handler\n");
         g_ex_status = 130;       // Define o status de saída para 130
         ft_printf("\n");         // Escreve uma nova linha
         rl_replace_line("", 0);  // Substitui a linha atual por uma string vazia
@@ -42,8 +41,8 @@ void signal_handler_child(int sig)
 {
     if (sig == SIGINT)
     {
-        printf("entra no signal handler child\n");
-        ft_printf("\n");         // Escreve uma nova linha
+        g_ex_status = 130;
+        ft_printf("\n");
     }
 }
 
@@ -51,7 +50,7 @@ void signal_handler_hd(int sig)
 {
     if (sig == SIGINT)
     {
-		printf("entra no signal handler hd\n");
+        ft_printf("\n");
         exit(0);
     }
 }
@@ -59,9 +58,7 @@ void signal_handler_hd(int sig)
 void signal_handler_nothing(int sig)
 {
     if (sig == SIGINT)
-    {
-		printf("entra no signal handler nothing\n");
-    }
+        g_ex_status = 130;
 }
 /**
  * Configura os manipuladores de sinal para SIGINT e SIGQUIT.
@@ -70,22 +67,15 @@ void signal_handler_nothing(int sig)
  * SIGINT e SIGQUIT. Ela utiliza a função signal_handler para SIGINT e
  * ignora SIGQUIT.
  */
-void signals(bool child, bool hd, bool normal)
+void signals(int options)
 {
-	printf("signals\n");
-    if(hd)
-    {
-		printf("oi hd\n");
-        signal(SIGINT, signal_handler_hd);
-    }
-    else if(child)
-    {
+    if(options == 0)
+        signal(SIGINT, signal_handler);
+    else if(options == 1)
         signal(SIGINT, signal_handler_child);
-    }
-	else if(normal)
+    else if(options == 2)
+        signal(SIGINT, signal_handler_hd);
+	else if(options == -1)
 		signal(SIGINT, signal_handler_nothing);
-    else
-        signal(SIGINT, signal_handler);// Associa signal_handler ao sinal SIGINT
     signal(SIGQUIT, SIG_IGN);           // Ignora o sinal SIGQUIT
 }
-

@@ -182,7 +182,7 @@ void	signal_quit(int sig);
 void	signal_quit1(int sig);
 void	signal_quit2(int sig);
 void	signal_handler(int sig);
-void	signals(bool child, bool hd, bool normal);
+void	signals(int options);
 void	ft_wait(t_main *main);
 
 /*

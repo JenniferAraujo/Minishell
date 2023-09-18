@@ -96,14 +96,10 @@ void	exec_other_cmd(char **cmd, t_main *main, bool child)
 
 	set_env_arr(main);
 	if(child)
-	{
-		printf("oi\n");
-		//signal handle ctrc --> \n
 		execution(cmd, main);
-	}
 	else
 	{
-		signals(true, false, false);
+		signals(1);
 		pid = fork();
 		if(pid == 0)
 		{

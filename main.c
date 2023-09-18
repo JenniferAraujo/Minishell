@@ -76,9 +76,9 @@ void	init_prompt(t_main	*main)
 
 	while (1)
 	{
-		signals(false, false, false);
-		prompt = get_prompt_msg(main);
-		input = readline(prompt);
+		signals(0);
+		//prompt = get_prompt_msg(main);
+		input = readline("minishell> ");
 		if (input == NULL)
 			break;
 		add_history(input);

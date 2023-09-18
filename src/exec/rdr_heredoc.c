@@ -29,31 +29,27 @@ char	*read_stdin(char *lim, bool quotes, t_main main)
 
 	while (1)
 	{
-		//printf("entra aqui??\n");
 		write(main.fd.stdout, "> ", 2);
-		//printf("entra aqui?? 2\n");
 		str = get_next_line(STDIN_FILENO, false);
 		if(!str)
 		{
-			write(main.fd.stdout, "\n", 1);
+			ft_putstr_fd("-minishell:  warning: here-document at line 1 delimited by end-of-file (wanted `", main.fd.stdout);
+			ft_putstr_fd(lim, main.fd.stdout);
+			ft_putendl_fd("')", main.fd.stdout);
 			exit(0);
 		}
-		printf("entra aqui?? 3\n");
 		if(!quotes)
 		{
 			//!str = expand_line(str, quotes);
 		}
-		printf("entra aqui?? 4\n");
 		if (!ft_strncmp(lim, str, get_max(ft_strlen(lim), ft_strclen(str, '\n'))))
 		{
-			printf("entra aqui\n");
 			ft_free_str(&str);
 			break ;
 		}
 		buff = ft_strjoinfree(buff, str);
 		ft_free_str(&str);
 	}
-	printf("entra aqui??\n");
 	return (buff);
 }
 
@@ -68,7 +64,7 @@ int	open_hd(char *lim, bool quotes, t_main *main)
 	{
 		//!error_management(NULL, 0, errno); //*errno -> number of last error
 	}
-	signals(false, true, false);
+	signals(2);
 	pid = fork();
 	if (pid == 0)
 	{
@@ -81,7 +77,7 @@ int	open_hd(char *lim, bool quotes, t_main *main)
 		exit(0);
 	}
 	close(heredoc_fd[1]);
-	signals(false, false, true);
+	signals(-1);
 	waitpid(pid, &exit_status, 0);
 	if (WEXITSTATUS(exit_status) != 0)
 		{
