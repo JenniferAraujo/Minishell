@@ -34,6 +34,8 @@ void	ft_exit(char **command, bool child)
 	//free_everything(); //!É PARA DAR FREE AQUI
 	if (!child)
 		ft_putendl_fd("exit", STDERR_FILENO);
+	if(!command)
+		exit(0);
 	if(!command[1])
 	{
 		exit(0);
