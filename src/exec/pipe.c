@@ -6,7 +6,7 @@
 /*   By: rimarque <rimarque>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 18:19:10 by rimarque          #+#    #+#             */
-/*   Updated: 2023/09/18 19:17:29 by rimarque         ###   ########.fr       */
+/*   Updated: 2023/09/18 19:45:01 by rimarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,11 +130,13 @@ void	mltp_pipes(int	*fd, t_ast *ast, t_ast_node *node, t_main *main)
 	wait_estatus_p(main, *ast);
 }
 
-void	pipex(t_ast *ast, t_ast_node *node, t_main *main)
+void	pipex(t_ast *ast, t_main *main)
 {
 	int	fd[2];
 	int	pid;
+	t_ast_node	*node;
 
+	node = get_beg(ast);
 	if (pipe(fd) == -1)
 	{
 		//!error_management(NULL, 0, errno); //!
@@ -171,12 +173,4 @@ void	pipex(t_ast *ast, t_ast_node *node, t_main *main)
 		close(fd[1]);
 		wait_estatus_p(main, *ast);
 	}
-}
-
-void	init_exec_ast(t_ast *ast, t_main *main)
-{
-	t_ast_node	*aux;
-
-	aux = get_beg(ast);
-	pipex(ast, aux, main);
 }

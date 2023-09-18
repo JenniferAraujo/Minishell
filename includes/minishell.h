@@ -138,7 +138,7 @@ EXEC
 */
 void	set_exit_code(t_main *main, int exit_code);
 void	exec_cmd(char **command, t_main *main, bool pipe);
-void	init_exec_ast(t_ast *ast, t_main *main);
+void	pipex(t_ast *ast, t_main *main);
 
 /*
 RDR
