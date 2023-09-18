@@ -31,7 +31,7 @@ void	ft_exit(char **command, bool child)
 {
 	int exit_code;
 
-	//free_everything(); //!É PARA DAR FREE AQUI
+	//free_all(); //!É PARA DAR FREE AQUI
 	if (!child)
 		ft_putendl_fd("exit", STDERR_FILENO);
 	if(!command)

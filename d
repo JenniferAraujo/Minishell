@@ -1,1 +1,0 @@
-rita e taaaao linda

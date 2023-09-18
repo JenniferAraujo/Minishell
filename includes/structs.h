@@ -105,8 +105,6 @@ typedef struct s_lexer
 /*
 AST
 */
-
-
 //* Nodes da lista da ast, onde vai conter os tokens pela ordem de execução
 typedef struct s_ast_node
 {
@@ -172,8 +170,6 @@ typedef struct s_main
 	char			**env_arr;
 	char			*prev;
 	int				exit_code;
-	int				fork;
-	int				proc;
 	t_lexer			tokens;
 	t_env			export_list;
 	t_env			env_list;
@@ -182,8 +178,6 @@ typedef struct s_main
 	t_std			fd;
 	t_prompt		prompt_list;
 	t_bool          flags;
-	pid_t			pid;
-	bool			hd;
 }t_main;
 
 #endif

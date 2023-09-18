@@ -6,7 +6,7 @@
 /*   By: rimarque <rimarque>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 14:38:26 by rimarque          #+#    #+#             */
-/*   Updated: 2023/09/16 16:29:20 by rimarque         ###   ########.fr       */
+/*   Updated: 2023/09/18 14:34:59 by rimarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,6 @@ void	init_main(t_main *main, char **envp)
 		main->env_arr = ft_calloc(sizeof(char *), 1);
 		main->prev = NULL;
 		main->exit_code = 0;
-		main->fork = 0;
-		main->proc = 0;
 		init_std(&main->fd); //*É AQUI! Se nao estou a fazer dup(1) e o 1 já foi redirecionado
 		main->flags.signal = false;
-		main->hd = false;
 }

@@ -6,20 +6,11 @@
 /*   By: rimarque <rimarque>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:04:20 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/09/15 12:58:32 by rimarque         ###   ########.fr       */
+/*   Updated: 2023/09/18 18:38:02 by rimarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
-
-int init_builtins(char  *str)
-{
-    if (!str)
-        return (0);
-    if (ft_strcmp(str, "echo") == 0 || ft_strcmp(str, "pwd") == 0 || ft_strcmp(str, "cd") == 0 || ft_strcmp(str, "env") == 0 || ft_strcmp(str, "export") == 0 ||ft_strcmp(str, "unset") == 0)
-        return (1);
-    return (0);
-}
 
 void	exec_cmd(char **command, t_main *main, bool child)
 {
