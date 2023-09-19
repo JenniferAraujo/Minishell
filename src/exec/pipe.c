@@ -6,7 +6,7 @@
 /*   By: rimarque <rimarque>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 18:19:10 by rimarque          #+#    #+#             */
-/*   Updated: 2023/09/18 19:45:01 by rimarque         ###   ########.fr       */
+/*   Updated: 2023/09/19 12:07:16 by rimarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	pipe_read_and_write(int *fd, int *next_fd, char **cmd, t_main *main)
 	close(next_fd[1]);
 	exec_cmd(cmd, main, true);
 }
+
 void	read_from_pipe(int *fd, char **cmd, t_main *main)
 {
 	close(fd[1]);
@@ -136,10 +137,11 @@ void	pipex(t_ast *ast, t_main *main)
 	int	pid;
 	t_ast_node	*node;
 
+	signals(1);
 	node = get_beg(ast);
 	if (pipe(fd) == -1)
 	{
-		//!error_management(NULL, 0, errno); //!
+		//!errror
 	}
 	pid = fork();
 	//!if (pid == -1)

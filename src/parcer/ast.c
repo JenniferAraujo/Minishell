@@ -115,7 +115,7 @@ void	create_ast(t_lexer tokens, t_ast *ast)
 		{
 			if(ast->size == 0)
 			{
-				printf("token: %s\n", aux_token->token.arr[0]);
+				//printf("token: %s\n", aux_token->token.arr[0]);
 				last_op = insert_first_ast(aux_token);
 			}
 			else
@@ -130,5 +130,5 @@ void	create_ast(t_lexer tokens, t_ast *ast)
 void	test_ast(t_lexer tokens, t_ast *ast)
 {
 	create_ast(tokens, ast);
-	print_ast(*ast);
+	//print_ast(*ast);
 }

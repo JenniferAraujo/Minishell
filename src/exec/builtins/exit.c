@@ -27,7 +27,7 @@ int	ft_isnbr(const char *str)
 	return(1);
 }
 
-void	ft_exit(char **command, bool child)
+void	ft_exit(char **command, bool child, t_main main)
 {
 	int exit_code;
 
@@ -35,11 +35,9 @@ void	ft_exit(char **command, bool child)
 	if (!child)
 		ft_putendl_fd("exit", STDERR_FILENO);
 	if(!command)
-		exit(0);
+		exit(main.exit_code);
 	if(!command[1])
-	{
-		exit(0);
-	}
+		exit(main.exit_code);
 	if(ft_isnbr(command[1]) && command[2] == NULL)
 	{
 		exit_code = ft_atoi(command[1]);

@@ -78,7 +78,7 @@ bool    modify_var(t_main *main, char *str, bool exp);
 void	copy_exp(t_main *main);
 void    remove_var(t_env *env, int index);
 void    cd(char *path, t_main *main, bool child);
-void	ft_exit(char **command, bool child);
+void	ft_exit(char **command, bool child, t_main main);
 
 /*
 !LEXER.C
@@ -149,13 +149,14 @@ void	rdr_out(char **arr, t_main *main);
 void	rdr_app(char **arr, t_main *main);
 void	rdr_hd(t_token token, t_main *main, int fd);
 int		open_hd(char *lim, bool quotes, t_main *main);
+void	rdr_error(char *str, t_main *main, int options);
 
 /*
 EXECVE
 */
 void	exec_other_cmd(char **cmd, t_main *main, bool pipe);
 void	execution(char **cmd, t_main *main);
-void	error_management(char *str);
+void	error_execve(char *str);
 void	free_pathname(char	*pathname, int flag);
 
 /*

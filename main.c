@@ -80,7 +80,7 @@ void	init_prompt(t_main	*main)
 		//prompt = get_prompt_msg(main);
 		input = readline("\033[1;31mminishell\033[0m🔥 ");
 		if (!input)
-			ft_exit(NULL, false);
+			ft_exit(NULL, false, *main);
 		add_history(input);
 		init_input(main, input);
 		if(g_ex_status != 0)

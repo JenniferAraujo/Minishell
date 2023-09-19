@@ -46,7 +46,7 @@ int check_quotes_print(t_main *main)
     int open_quote_position = -1; // Posição da aspa de abertura
     char open_quote_type = '\0';  // Tipo da aspa de abertura
 
-    printf("\033[1;35m\t\t[Quotes analises]\033[0m\n");
+    //printf("\033[1;35m\t\t[Quotes analises]\033[0m\n");
     while (main->input_prompt[i] != '\0')
     {
         char c = main->input_prompt[i];
@@ -61,7 +61,7 @@ int check_quotes_print(t_main *main)
             }
             else if (quotes_analises == 0 && open_quote_position != -1)
             {
-                printf("Open quote of type %c at position %d, Close quote at position %d\n", open_quote_type, open_quote_position, i);
+                //printf("Open quote of type %c at position %d, Close quote at position %d\n", open_quote_type, open_quote_position, i);
                 main->quotes.type = open_quote_type;
 				main->quotes.start = open_quote_position;
 				main->quotes.end = i;
@@ -70,7 +70,7 @@ int check_quotes_print(t_main *main)
             }
         }
 
-        printf("Character: %c, index: %i ,quotes state: %d\n", c, i, quotes_analises);
+        //printf("Character: %c, index: %i ,quotes state: %d\n", c, i, quotes_analises);
         i++;
     }
 
@@ -82,6 +82,6 @@ int check_quotes_print(t_main *main)
         main->quotes.error = 1;
         return(0);
     }
-    printf("\033[1;35m\t\t[End quotes analises]\033[0m\n");
+    //printf("\033[1;35m\t\t[End quotes analises]\033[0m\n");
     return 0;
 }

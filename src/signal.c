@@ -6,7 +6,7 @@
 /*   By: rimarque <rimarque>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:11:59 by joe               #+#    #+#             */
-/*   Updated: 2023/09/18 12:50:45 by rimarque         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:54:17 by rimarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void signal_handler_hd(int sig)
 {
     if (sig == SIGINT)
     {
-        ft_printf("\n");
         exit(0);
     }
 }
@@ -77,5 +76,5 @@ void signals(int options)
         signal(SIGINT, signal_handler_hd);
 	else if(options == -1)
 		signal(SIGINT, signal_handler_nothing);
-    signal(SIGQUIT, SIG_IGN);           // Ignora o sinal SIGQUIT
+    signal(SIGQUIT, SIG_IGN);  // Ignora o sinal SIGQUIT
 }

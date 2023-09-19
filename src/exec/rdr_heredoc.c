@@ -12,6 +12,8 @@
 
 #include "../../includes/minishell.h"
 
+extern int	g_ex_status;
+
 int	get_max(int a, int b)
 {
 	if (a > b)
@@ -19,10 +21,11 @@ int	get_max(int a, int b)
 	return (b);
 }
 
-char	*read_stdin(char *lim, bool quotes, t_main main)
+void	read_stdin(int fd, char *lim, bool quotes, t_main main)
 {
 	char	*str;
 	char	*buff;
+	int		pid;
 
 	str = "\0";
 	buff = "\0";
@@ -33,10 +36,10 @@ char	*read_stdin(char *lim, bool quotes, t_main main)
 		str = get_next_line(STDIN_FILENO, false);
 		if(!str)
 		{
-			ft_putstr_fd("-minishell:  warning: here-document at line 1 delimited by end-of-file (wanted `", main.fd.stdout);
+			ft_putstr_fd("minishell:  warning: here-document at line 1 delimited by end-of-file (wanted `", main.fd.stdout);
 			ft_putstr_fd(lim, main.fd.stdout);
 			ft_putendl_fd("')", main.fd.stdout);
-			exit(0);
+			break ;
 		}
 		if(!quotes)
 		{
@@ -47,10 +50,9 @@ char	*read_stdin(char *lim, bool quotes, t_main main)
 			ft_free_str(&str);
 			break ;
 		}
-		buff = ft_strjoinfree(buff, str);
+		write(fd, str, strlen(str));
 		ft_free_str(&str);
 	}
-	return (buff);
 }
 
 int	open_hd(char *lim, bool quotes, t_main *main)
@@ -66,25 +68,16 @@ int	open_hd(char *lim, bool quotes, t_main *main)
 	}
 	signals(2);
 	pid = fork();
-	if (pid == 0)
+	if(pid == 0)
 	{
 		close(heredoc_fd[0]);
-		buff = read_stdin(lim, quotes, *main);
-		write(heredoc_fd[1], buff, strlen(buff));
+		read_stdin(heredoc_fd[1], lim, quotes, *main);
 		close(heredoc_fd[1]);
-		if (*buff)
-			ft_free_str(&buff);
 		exit(0);
 	}
-	close(heredoc_fd[1]);
 	signals(-1);
+	close(heredoc_fd[1]);
 	waitpid(pid, &exit_status, 0);
-	if (WEXITSTATUS(exit_status) != 0)
-		{
-			set_exit_code(main, WEXITSTATUS(exit_status));
-		}
-	else
-		set_exit_code(main, 0);
 	return(heredoc_fd[0]);
 }
 
@@ -92,12 +85,10 @@ void	rdr_hd(t_token token, t_main *main, int fd)
 {
 	if(token.arr[1] == NULL)
 	{
-		//fd = open_hd(token.arr[0], token.quotes, main);
-		dup2(fd, STDIN_FILENO);
+		dup2(fd, STDIN_FILENO) == -1;
 	}
 	else
 	{
-		//fd = open_hd(token.arr[1], token.quotes, main);
 		if(dup2(fd, ft_atoi(token.arr[0])) == -1)
 		{
 			//!std_err
