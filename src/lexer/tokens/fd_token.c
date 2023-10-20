@@ -6,7 +6,7 @@
 /*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:47:49 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/10/18 18:00:14 by dinoguei         ###   ########.fr       */
+/*   Updated: 2023/10/20 19:06:50 by dinoguei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 void	get_fd_out(t_main *main, int *i, t_type token, char *fd)
 {
 	int		start;
-	char	*aux;
 	bool	run;
 
 	run = true;
@@ -35,11 +34,10 @@ void	get_fd_out(t_main *main, int *i, t_type token, char *fd)
 		else
 			(*i)++;
 	}
-	aux = ft_substr(main->input_prompt, start, (*i - start));
 	fd = ft_strjoinfree(fd, " ");
-	fd = ft_strjoinfree(fd, aux);
+	fd = ft_strjoinfree3(fd, ft_substr(main->input_prompt,
+				start, (*i - start)));
 	add_token(main, token, fd);
-	free(aux);
 	free(fd);
 }
 
@@ -78,11 +76,39 @@ bool	check_valid_fd(char *str)
 	return (true);
 }
 
+void	get_fd_file_name(t_main *main, int start, int *i)
+{
+	char	*str;
+
+	str = ft_substr(main->input_prompt, start, (*i - start));
+	if (check_valid_fd(str) == false)
+		return ;
+	fd_tokens(main, i, str, main->input_prompt[*i]);
+	main->flags.rdr_treated = true;
+	return ;
+}
+
+void	stop_beeing_fd(t_main *main, int *i)
+{
+	int		index;
+
+	index = *i + 1;
+	if (main->input_prompt[index] >= 48 && main->input_prompt[index] <= 57)
+		index++;
+	if (special_chr(main->input_prompt[*i]) == true)
+	{
+		if (ft_strncmp(main->input_prompt + *i, "|", 1) == 0)
+			return ;
+		else
+			main->flags.is_fd = false;
+	}
+	*i = index;
+}
+
 //* Funcao principal para verificar se os numeros são um fd
 int	get_fd_rdr(t_main *main, int *i)
 {
 	int		start;
-	char	*str;
 
 	start = *i;
 	while (main->input_prompt[*i])
@@ -97,16 +123,15 @@ int	get_fd_rdr(t_main *main, int *i)
 					break ;
 				else
 				{
-					str = ft_substr(main->input_prompt, start, (*i - start));
-					if (check_valid_fd(str) == false)
-						break ;
-					fd_tokens(main, i, str, main->input_prompt[*i]);
-					main->flags.rdr_treated = true;
+					get_fd_file_name(main, start, i);
 					break ;
 				}
 			}
 			else
+			{
+				stop_beeing_fd(main, i);
 				break ;
+			}
 		}
 	}
 	return (*i - start);

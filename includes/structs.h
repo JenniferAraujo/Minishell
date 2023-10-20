@@ -47,6 +47,7 @@ typedef struct s_bool
 	bool			signal;
 	bool			not_print;
 	bool			hd;
+	bool			is_fd;
 } t_bool;
 
 /*
@@ -77,7 +78,6 @@ typedef struct s_extra
 {
 	int		start;
 	bool	fd;
-	bool	run;
 	bool	extra;
 	int		n_len;
 }t_extra;
