@@ -41,7 +41,9 @@ bool	extra_tokens_while(t_main *main, t_extra *a, int *i)
 	if ((main->input_prompt[*i] >= 48
 			&& main->input_prompt[*i] <= 57) && a->fd == true)
 	{
-		if (main->input_prompt[*i - 1] == '-')
+		if (main->input_prompt[*i - 1] == '-'
+			|| (ft_isalpha(main->input_prompt[*i - 1]) == 1
+				&& special_chr(main->input_prompt[*i + 1]) == true))
 			a->fd = false;
 		else
 		{

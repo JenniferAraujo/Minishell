@@ -6,7 +6,7 @@
 /*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:47:49 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/10/20 19:06:50 by dinoguei         ###   ########.fr       */
+/*   Updated: 2023/10/23 14:33:11 by dinoguei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,26 +66,16 @@ void	fd_tokens(t_main *main, int *i, char *fd, char token)
 	}
 }
 
-bool	check_valid_fd(char *str)
-{
-	long int	fd;
-
-	fd = ft_long_atol(str);
-	if (fd > INT_MAX)
-		return (false);
-	return (true);
-}
-
-void	get_fd_file_name(t_main *main, int start, int *i)
+int	get_fd_file_name(t_main *main, int start, int *i)
 {
 	char	*str;
 
 	str = ft_substr(main->input_prompt, start, (*i - start));
 	if (check_valid_fd(str) == false)
-		return ;
+		return (*i - start);
 	fd_tokens(main, i, str, main->input_prompt[*i]);
 	main->flags.rdr_treated = true;
-	return ;
+	return (*i - start);
 }
 
 void	stop_beeing_fd(t_main *main, int *i)
@@ -122,10 +112,7 @@ int	get_fd_rdr(t_main *main, int *i)
 				if (ft_strncmp(main->input_prompt + *i, "|", 1) == 0)
 					break ;
 				else
-				{
-					get_fd_file_name(main, start, i);
-					break ;
-				}
+					return (get_fd_file_name(main, start, i));
 			}
 			else
 			{

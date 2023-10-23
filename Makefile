@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rimarque <rimarque@student.42.fr>          +#+  +:+       +#+         #
+#    By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/08 17:57:43 by jcruz-da          #+#    #+#              #
-#    Updated: 2023/10/19 22:47:41 by rimarque         ###   ########.fr        #
+#    Updated: 2023/10/23 14:32:51 by dinoguei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ _FILES 			= error_msg exit_code init signal\
 					print_img quotes list_quotes quotes_substr \
 					destroy free_list free_ast \
 					list lexer expand expand_utils expand_utils2 join_utils lexer_utils add_tokens quotes_treatment quotes_utils \
-					extra_tokens output_tokens input_tokens fd_token \
+					extra_tokens output_tokens input_tokens fd_token tokens_utils\
 					parser cmdcat ast ast_utils ast_lexer syntax list_endnull \
 					env_list env_arr \
 					exec_cmd execve execve_utils child_aux \
