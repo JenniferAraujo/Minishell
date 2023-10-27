@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   quotes_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 16:18:42 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/10/18 16:18:42 by dinoguei         ###   ########.fr       */
+/*   Created: 2023/10/18 16:18:42 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/10/18 16:18:42 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 char	**str_to_arr(char *str, bool free)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   expand_utils2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 15:24:53 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/10/18 15:24:53 by dinoguei         ###   ########.fr       */
+/*   Created: 2023/10/18 15:24:53 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/10/18 15:24:53 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 //* Esta funcao vai verificar se nos comandos foi inserido um $ para poder
 //*  prosseguir com a expansao

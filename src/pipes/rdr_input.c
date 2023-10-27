@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rdr_input.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 17:47:38 by rimarque          #+#    #+#             */
-/*   Updated: 2023/10/27 01:05:09 by dinoguei         ###   ########.fr       */
+/*   Updated: 2023/10/27 01:05:09 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 extern int	g_ex_status;
 

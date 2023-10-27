@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rimarque <rimarque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 17:48:04 by jede-ara          #+#    #+#             */
+/*   Created: 2023/08/16 17:48:04 by jcruz-da          #+#    #+#             */
 /*   Updated: 2023/10/24 17:55:28 by rimarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 /*Essa função insere a variável na lista especificada, no caso uso ela na export
 e na env_list */

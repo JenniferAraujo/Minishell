@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   exp_unset_error.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:29:46 by jenny             #+#    #+#             */
-/*   Updated: 2023/10/24 17:59:35 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/10/24 17:59:35 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 void	invalid_option(int fd, char *command, char *str)
 {

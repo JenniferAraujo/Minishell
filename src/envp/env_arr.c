@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rimarque <rimarque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/10 15:49:31 by jede-ara          #+#    #+#             */
+/*   Created: 2023/08/10 15:49:31 by jcruz-da          #+#    #+#             */
 /*   Updated: 2023/10/24 11:26:34 by rimarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 void	set_env_arr(t_main *main)
 {

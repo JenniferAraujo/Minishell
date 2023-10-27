@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 //*Encontra o comando à esquerda do pipe
 //*Recebe o node à esquerda do pipe
 //*Anda para o nó anterior até encontrar o comando

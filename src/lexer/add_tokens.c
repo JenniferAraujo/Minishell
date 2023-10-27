@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   add_tokens.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 16:00:15 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/09/21 16:00:15 by dinoguei         ###   ########.fr       */
+/*   Created: 2023/09/21 16:00:15 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/09/21 16:00:15 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 void	head_null(t_main *main, char *str, char ***result, t_type token)
 {

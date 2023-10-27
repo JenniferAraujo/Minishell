@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils_cd.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:42:36 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/10/24 18:05:45 by jede-ara         ###   ########.fr       */
+/*   Created: 2023/10/17 16:42:36 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/10/24 18:05:45 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 /*Essa funcao atualiza o pwd, toda vez que o pwd é mudado chamamos ela para
 atualizar o path novo*/

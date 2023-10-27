@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 /*Essa função é para saber se é um numero*/
 int	ft_isnbr(const char *str)

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   join_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:09:13 by rimarque          #+#    #+#             */
-/*   Updated: 2023/10/27 00:33:22 by dinoguei         ###   ########.fr       */
+/*   Updated: 2023/10/27 00:33:22 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 //* Flag = 1: juntar a str in quotes e o arr after na string seguinte
 // Juntar a str in quotes e a 1a str do array after na mesma string

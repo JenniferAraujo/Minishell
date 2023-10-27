@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 //*Liberta o pathname, se lhe tiver sido alocada memoria
 void	free_pathname(char	*pathname, int flag)

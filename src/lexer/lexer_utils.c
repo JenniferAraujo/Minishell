@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   lexer_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 16:03:48 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/10/18 16:03:48 by dinoguei         ###   ########.fr       */
+/*   Created: 2023/10/18 16:03:48 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/10/18 16:03:48 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 //* Remove nodes num index especifico
 void	remove_node(t_lexer *lexer, int index, bool ft_free)

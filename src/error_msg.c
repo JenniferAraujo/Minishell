@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
-#include "../includes/structs.h"
+#include "minishell.h"
 
 void	error_msg_cmd(char	*str, int fd)
 {

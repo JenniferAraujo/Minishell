@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   output_tokens.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 15:45:44 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/08/22 15:45:44 by dinoguei         ###   ########.fr       */
+/*   Created: 2023/08/22 15:45:44 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/08/22 15:45:44 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/minishell.h"
+#include "minishell.h"
 
 //* Funcao de ajuda para a get_rdr_out que verifica
 bool	is_space(char c)

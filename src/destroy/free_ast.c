@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 //*Liberta o último ast_node(pipe) da lista 
 //(primeiro da ordem de execucao)

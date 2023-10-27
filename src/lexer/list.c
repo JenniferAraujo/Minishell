@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "minishell.h"
 #include "../includes/structs.h"
 
 void	shift_index(t_lexer *stack)

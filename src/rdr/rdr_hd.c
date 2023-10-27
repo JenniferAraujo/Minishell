@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 int	read_stdin_aux(char *str, char *lim, t_main *main, int *line)
 {

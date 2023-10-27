@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   cmdcat_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 21:57:13 by rimarque          #+#    #+#             */
-/*   Updated: 2023/10/26 18:32:47 by dinoguei         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:32:47 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 //*encontra o primeiro comando e devolve o seu index
 int	find_first_cmd(t_node *aux, int size)

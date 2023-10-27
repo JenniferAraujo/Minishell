@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>              +#+  +:+       +#+    */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 10:31:09 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/25 10:31:09 by marvin           ###   ########.fr       */
+/*   Created: 2023/10/25 10:31:09 by jcruz-da            #+#    #+#           */
+/*   Updated: 2023/10/25 10:31:09 by jcruz-da           ###   ########.fr     */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "minishell.h"
 
 t_main	*get_main(t_main	*main)
 {

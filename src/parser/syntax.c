@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   syntax.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 15:58:56 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/09/19 15:58:56 by dinoguei         ###   ########.fr       */
+/*   Created: 2023/09/19 15:58:56 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/09/19 15:58:56 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 //*Redirects vazios seguidos
 bool	syntax_followed_rdrs(t_lexer tokens)

@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jenny <jenny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 14:04:44 by jede-ara          #+#    #+#             */
+/*   Created: 2023/08/16 14:04:44 by jcruz-da          #+#    #+#             */
 /*   Updated: 2023/10/04 14:55:06 by jenny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 /*Essa função verifica se há -n*/
 int	echo_newline(char *command)

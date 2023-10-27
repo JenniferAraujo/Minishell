@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   unset.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 17:48:04 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/10/25 17:32:03 by jede-ara         ###   ########.fr       */
+/*   Created: 2023/08/16 17:48:04 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/10/25 17:32:03 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 /*Essa função recebe um ponteiro para a estrutura t_env como argumento e
 atualiza o index dos elementos na lista, precisamos saber o index para dar

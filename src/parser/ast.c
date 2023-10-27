@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 void	insert_first_op(t_ast_node **op, t_node *pipe,
 			t_leaf *l_left, t_leaf *l_right)

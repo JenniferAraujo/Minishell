@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rdr_output.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jenny <jenny@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>                +#+  +:+       +#+  */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 18:35:09 by rimarque          #+#    #+#             */
-/*   Updated: 2023/10/18 15:51:07 by jenny            ###   ########.fr       */
+/*   Updated: 2023/10/18 15:51:07 by jcruz-da            ###   ########.fr    */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 void	ft_redirect_out(t_node	*head, t_main *main)
 {

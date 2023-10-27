@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   output_tokens.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 15:45:44 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/08/22 15:45:44 by dinoguei         ###   ########.fr       */
+/*   Created: 2023/08/22 15:45:44 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/08/22 15:45:44 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/minishell.h"
+#include "minishell.h"
 
 //* Aqui vai identificar para onde se vai mandar o input do caracter
 void	get_rdr_in(t_main *main, int *i, t_type token)

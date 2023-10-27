@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 //*Esta função percorre a árvore (ast) e encontra o primeiro pipe
 t_ast_node	*get_beg(t_ast *ast)

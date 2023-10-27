@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   cmdcat.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 17:57:47 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/09/19 17:57:47 by dinoguei         ###   ########.fr       */
+/*   Created: 2023/09/19 17:57:47 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/09/19 17:57:47 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 int	cmdarrcat(t_lexer *tokens, t_node *aux, char ***temp, bool *cmdcat)
 {

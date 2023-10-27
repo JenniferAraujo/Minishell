@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   extra_tokens.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 14:35:10 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/08/22 17:04:12 by dinoguei         ###   ########.fr       */
+/*   Created: 2023/08/16 14:35:10 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/08/22 17:04:12 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/minishell.h"
+#include "minishell.h"
 
 bool	check_index_quotes(t_main *main, int *i)
 {

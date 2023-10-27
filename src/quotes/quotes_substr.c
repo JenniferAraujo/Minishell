@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "minishell.h"
 
 void	verify_quotes_str(t_quotes *quotes, t_variables_quotes *s_var_quotes)
 {

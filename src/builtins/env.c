@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jenny <jenny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/17 22:48:13 by jede-ara          #+#    #+#             */
+/*   Created: 2023/08/17 22:48:13 by jcruz-da          #+#    #+#             */
 /*   Updated: 2023/10/08 14:58:52 by jenny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 /*A env percorre a lista de variaveis de ambiente e imprime ela quando chamada,
 se a lista tiver vazia ou o env for chamado com argumentos dá erro*/

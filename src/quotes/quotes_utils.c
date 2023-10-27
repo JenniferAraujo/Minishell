@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   quotes.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jenny <jenny@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>                +#+  +:+       +#+  */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 15:53:46 by jenny             #+#    #+#             */
-/*   Updated: 2023/10/18 15:53:46 by jenny            ###   ########.fr       */
+/*   Created: 2023/10/18 15:53:46 by jcruz-da             #+#    #+#          */
+/*   Updated: 2023/10/18 15:53:46 by jcruz-da            ###   ########.fr    */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "minishell.h"
 #include "../includes/structs.h"
 
 void	create_quotes_node(t_quotes *quotes, int open_q_t, \

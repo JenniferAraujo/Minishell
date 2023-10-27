@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   expand_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>           +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 15:51:54 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/13 15:51:54 by marvin           ###   ########.fr       */
+/*   Created: 2023/10/13 15:51:54 by jcruz-da            #+#    #+#           */
+/*   Updated: 2023/10/13 15:51:54 by jcruz-da           ###   ########.fr     */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 //*A partir da posição seguinte ao 1o $ verifica se há mais $
 bool	check_more_var(char *str, int i)

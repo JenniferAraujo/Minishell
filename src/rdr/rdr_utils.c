@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 //*Esta função chama as funções que executam os rdr guardados no token enviado
 void	exec_rdr(t_token token, t_main *main, int hd)

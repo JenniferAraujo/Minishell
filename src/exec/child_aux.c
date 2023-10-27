@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 //*Esta função espera pelo processo identificado pelo
 //pid (process id) e seta o exit status

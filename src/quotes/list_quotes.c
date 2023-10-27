@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   list_quotes.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 22:44:59 by rimarque          #+#    #+#             */
-/*   Updated: 2023/10/25 22:58:59 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/10/25 22:58:59 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "minishell.h"
 #include "../includes/structs.h"
 
 void	shift_index_quotes(t_quotes *stack)

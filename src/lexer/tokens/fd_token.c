@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fd_token.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 16:47:49 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/10/25 16:38:44 by jede-ara         ###   ########.fr       */
+/*   Created: 2023/09/28 16:47:49 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/10/25 16:38:44 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/minishell.h"
+#include "minishell.h"
 
 //* Vai meter na lista o certo
 void	get_fd_out(t_main *main, int *i, t_type token, char *fd)

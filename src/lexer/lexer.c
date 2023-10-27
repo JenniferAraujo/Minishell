@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/10 16:11:20 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/08/18 04:01:31 by dinoguei         ###   ########.fr       */
+/*   Created: 2023/08/10 16:11:20 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/08/18 04:01:31 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 //* Cerebro da separacao de tokens, vai ver oque tem a string nesse index
 //*  e posteriormente tratar de mandar, tudo tratado para a lista

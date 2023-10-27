@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+         #
+#    By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/08 17:57:43 by jcruz-da          #+#    #+#              #
-#    Updated: 2023/10/26 18:17:28 by dinoguei         ###   ########.fr        #
+#    Updated: 2023/10/26 18:17:28 by jcruz-da         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ RD				= -lreadline
 
 LIBFTDIR 		= libft_group
 LIBFT 			= $(LIBFTDIR)/libft.a
-INCLUDE			= includes
+INCLUDE			= ./includes/
 SRCS			= src
 _SUBFOLDERS		= parser envp exec builtins rdr pipes lexer lexer/tokens quotes destroy
 VPATH			= $(SRCS) $(addprefix $(SRCS)/, $(_SUBFOLDERS))

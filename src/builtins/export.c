@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jenny <jenny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 17:47:44 by jede-ara          #+#    #+#             */
+/*   Created: 2023/08/16 17:47:44 by jcruz-da          #+#    #+#             */
 /*   Updated: 2023/10/08 14:59:16 by jenny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 /*Imprime o valor da variavel, tudo que esta antes do sinal de =*/
 void	print_variable(char *var)

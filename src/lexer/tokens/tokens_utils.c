@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   tokens_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinoguei <dinoguei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 15:37:23 by dinoguei          #+#    #+#             */
-/*   Updated: 2023/10/24 15:37:23 by dinoguei         ###   ########.fr       */
+/*   Created: 2023/10/24 15:37:23 by jcruz-da          #+#    #+#             */
+/*   Updated: 2023/10/24 15:37:23 by jcruz-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/minishell.h"
+#include "minishell.h"
 
 bool	check_valid_fd(char *str)
 {

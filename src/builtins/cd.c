@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jenny <jenny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 17:33:34 by jede-ara          #+#    #+#             */
+/*   Created: 2023/08/16 17:33:34 by jcruz-da          #+#    #+#             */
 /*   Updated: 2023/10/09 12:06:04 by jenny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 int	only_cd(char *current, t_main *main)
 {
