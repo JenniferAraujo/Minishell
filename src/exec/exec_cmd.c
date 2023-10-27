@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_cmd.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rimarque <rimarque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:04:20 by jcruz-da          #+#    #+#             */
-/*   Updated: 2023/10/27 00:24:27 by jcruz-da         ###   ########.fr       */
+/*   Updated: 2023/10/27 20:10:57 by rimarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ void	exec_cmd(char **command, t_main *main, bool child)
 {
 	if (!command)
 		return ;
+	if (!*command)
+	{
+		error_msg_cmd("\0", STDERR_FILENO);
+		exit_child(main, 127, child);
+		return ;
+	}
 	if (ft_strcmp(command[0], "echo") == 0)
 		echo(command, main, child);
 	else if (ft_strcmp(command[0], "pwd") == 0)

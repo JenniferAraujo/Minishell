@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   syntax_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: jcruz-da <jcruz-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 21:16:33 by rimarque          #+#    #+#             */
 /*   Updated: 2023/10/26 18:09:48 by jcruz-da         ###   ########.fr       */
+=======
+/*   By: rimarque <rimarque@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/23 21:16:33 by rimarque          #+#    #+#             */
+/*   Updated: 2023/10/27 18:09:43 by rimarque         ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +44,7 @@ bool	is_rdr(t_type type)
 
 bool	is_emptyrdr(t_token token)
 {
-	if (is_rdr(token.type)
-		&& (token.arr == 0 || *token.arr == 0))
+	if (is_rdr(token.type) && (token.arr == 0))
 		return (true);
 	return (false);
 }

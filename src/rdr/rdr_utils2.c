@@ -1,49 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print.c                                         :+:      :+:    :+:   */
+/*   rdr_utils2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rimarque <rimarque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/24 13:33:23 by rimarque          #+#    #+#             */
-/*   Updated: 2023/10/27 20:10:32 by rimarque         ###   ########.fr       */
+/*   Created: 2023/10/27 15:46:29 by rimarque          #+#    #+#             */
+/*   Updated: 2023/10/27 18:57:18 by rimarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../includes/minishell.h"
 
-void	print_arr(char **arr)
+bool	check_errors(t_main *main, char **arr)
 {
-	size_t	i;
-
-	i = 0;
-	if (!arr)
-	{
-		printf("arr null\n");
-		return ;
-	}
+	if (main->flags.rdr_err)
+		return (true);
 	if (!*arr)
 	{
-		printf("string null\n");
-		return ;
+		rdr_error("\0", main, 0);
+		return (true);
 	}
-	while (arr[i])
+	if (arr[0][0] == '$')
 	{
-		ft_putstr_fd(arr[i], 1);
-		write(1, ".\n", 2);
-		i++;
+		rdr_error(arr[0], main, 2);
+		return (true);
 	}
-}
-
-void	print_matrix(char ***matrix)
-{
-	int	i;
-
-	i = 0;
-	while (matrix[i])
-	{
-		print_arr(matrix[i]);
-		write(1, "\n", 1);
-		i++;
-	}
+	return (false);
 }
