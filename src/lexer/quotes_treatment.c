@@ -125,6 +125,5 @@ char	**quotes_treatment(t_quotes quotes, char *str, t_main *main)
 			free(help.temp);
 		aux = aux->next;
 	}
-	print_arr(help.result);
 	return (help.result);
 }

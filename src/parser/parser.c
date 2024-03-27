@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-//*O parcer organiza o imput para a execução e
+//*O parcer organiza o input para a execução e
 //retorna caso o tamanho da lista seja 0
 //*1º faz a analise sintatica e retorna caso a sintase esteja errada
 //*2º caso a lista tenha apenas 1 elemento tipo STRING vai executar o comando,
