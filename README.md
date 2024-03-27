@@ -34,6 +34,14 @@ Shells have an inseparable connection with the inception of IT. In the past, pro
         3. Exit and $?
         4. Pipes / signals / process links 
 
+<table align=center>
+	<tbody>
+		<tr>
+			<td><image src="img/builtinsQuotesExpansion.png"></td>
+			<td><image src="img/PipesRedirections.png"></td>
+		</tr>
+	</tbody>
+</table>
         
 ## How to use it
 
