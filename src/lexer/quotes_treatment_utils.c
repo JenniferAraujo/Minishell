@@ -65,7 +65,6 @@ char	**check_join_options(t_join join, int option)
 
 	if (option == 1)
 	{
-		printf("entra aqui\n");
 		if (join.str == NULL)
 			result = ft_arrjoin(join.before, join.after);
 		else
