@@ -29,6 +29,15 @@ git clone git@github.com:JenniferAraujo/Minishell.git
 - Continuous update of exit status
 - Working history
 ```
+<table align=center>
+	<tbody>
+		<tr>
+			<td><image src="img/builtinsQuotesExpansion.png"></td>
+			<td><image src="img/PipesRedirections.png"></td>
+		</tr>
+	</tbody>
+</table>
+
 ## :link: **Compilation**
 To compile the program you should run `make`.
 
