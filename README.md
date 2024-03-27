@@ -1,34 +1,39 @@
-# **Minishell**
 
-## :speech_balloon: **About**
-Minishell is a project that seeks to  recreate a shell inspired by Bash, coded in C.
+<H1 align="center">
+  Minishell
+</H1>
 
-## 🙋‍♀️ **Authorship**
+<p align="center">
+  <img src="https://github.com/mcombeau/mcombeau/blob/main/42_badges/minishelle.png" alt="Minishell 42 project badge"/>
+</p>
 
-- [Diogo Nogueira Souza](https://github.com/souzitaaaa)
-- [Jennifer Araújo](https://github.com/JenniferAraujo)
-- [Joelen Cruz](https://github.com/JoelenCruz)
-- [Rita Marques](https://github.com/rimarque)
+<p align="center">
+<b>The aim of this project is to develop a basic shell using the C programming language. </b>
+</p>
 
-## :inbox_tray: **Cloning the repository**
+<p align="center">
+Shells have an inseparable connection with the inception of IT. In the past, programmers unanimously found the process of communicating with computers through aligned 1s and 0s switches to be exasperating. Hence, it naturally led to the conception of communicating with computers through interactive lines of commands, resembling a language closer to English. 
+</p>
 
-```shell
-git clone git@github.com:JenniferAraujo/Minishell.git 
-```
+<img src='COLOCAR GIF AQUI'/>
 
-## 💎 **Features**
-```
-- Prompt display
-- Lexer and parser for the input, with the use of an abstract syntax tree
-- Incorporation of the echo, cd, pwd, unset, export, env and exit built-ins
-- Support for pipe functionality, enabling users to chain multiple commands together
-- Implementation of overwrite and append redirections (input and output, including here_doc)
-- Handling expansion of environment variables and exit status
-- Handling single and double quotes
-- Signal handling for ctrl-C, ctrl-D and ctrl-\
-- Continuous update of exit status
-- Working history
-```
+##  The Project consist of two parts :
+**Parsing**
+
+        1. readline
+        2. pipes
+        3. Command and arguments
+        4. The <,>, >> redirects
+        5. Environment variables
+        6. The separations
+        7. history
+**The execution**
+
+        1. Redirects
+        2. Env, export, unset
+        3. Exit and $?
+        4. Pipes / signals / process links 
+
 <table align=center>
 	<tbody>
 		<tr>
@@ -37,12 +42,23 @@ git clone git@github.com:JenniferAraujo/Minishell.git
 		</tr>
 	</tbody>
 </table>
+        
+## How to use it
 
-## :link: **Compilation**
-To compile the program you should run `make`.
-
-This rule will generate an executable file named `minishell`. To launch the executable you should follow this syntax:
+By using `make` the `minishell` executable is created.
 
 ```sh
-$ ./minishell
+git clone https://github.com/JenniferAraujo/Minishell.git
+cd minishell
+make
+./minishell
 ```
+
+## Contributors
+
+|                                                 | GitHub                      |
+|-------------------------------------------------|-----------------------------|
+| <img src="https://avatars.githubusercontent.com/u/117469751?v=4"  width="50" height="50"> | [souzitaaaa](https://github.com/souzitaaaa) |
+| <img src="https://avatars.githubusercontent.com/u/106436743?v=4" width="50" height="50"> | [JenniferAraujo ](https://github.com/JenniferAraujo) |
+| <img src="https://avatars.githubusercontent.com/u/43698585?v=4" width="50" height="50"> | [JoelenCruz](https://github.com/JoelenCruz) |
+| <img src="https://avatars.githubusercontent.com/u/116922102?v=4" width="50" height="50"> | [rimarque](https://github.com/rimarque) |
