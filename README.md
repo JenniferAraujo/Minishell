@@ -25,7 +25,7 @@ git clone git@github.com:JenniferAraujo/Minishell.git
 - Implementation of overwrite and append redirections (input and output, including here_doc)
 - Handling expansion of environment variables and exit status
 - Handling single and double quotes
-- Signal handling for ctrl-C, ctrl-D and ctrl-\;
+- Signal handling for ctrl-C, ctrl-D and ctrl-\
 - Continuous update of exit status
 - Working history
 ```
